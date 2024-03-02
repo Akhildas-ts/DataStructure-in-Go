@@ -105,31 +105,25 @@ func (l *LinkedList) DeleteNOde(val int) {
 
 //Serach for specific value
 
-// func (l *LinkedList) Serachvalue(val int) (int, int, error) {
+func (l *LinkedList) Serachvalue(val int) (int, int, error) {
 
-// 	serachNOde := &Node{data: val}
+	
 
-// 	if l.head == serachNOde {
-// 		return serachNOde.data, l.length, nil
-// 	}
+	if l.head.data == val{
 
-// 	current := l.head
-// 	if l.head == nil{
-// 		return 0,0, errors.New("there erersera")
-// 	}
+		return val,1,nil
+	}
 
-// 	if current.next == nil {
-// 		return 0, 0, errors.New("there is no")
-// 	}
-// 	for current.next.data != val {
-		
-// 		current = current.next
-// 	}
+	current := l.head
 
-// 	if current.next.data == val {
-// 		return current.next.data, l.length, nil
-// 	}
 
-// 	return 0, 0, errors.New("there is no value to found")
+	for current.next != nil{
 
-// }
+		if current.data == val{
+			return current.data,l.length,nil
+		}
+		current = current.next
+	}
+
+	return 0,0,errors.New("there is no value in the node")
+}

@@ -27,12 +27,13 @@ func main() {
 	
 	//A4 
 	// l1.DeleteNOde(10)
-	// l1.TraverseAllNode()
+	l1.TraverseAllNode()
 
-	// node1,ind,err:= l1.Serachvalue(1)
-	// if err!= nil{
-	// 	fmt.Println(err)
-	// }
-	// fmt.Println("search value ",node1,"index:",ind)
+
+	//A5 SEARCHING VALUE
+	
+	node1,ind,err:= l1.Serachvalue(20)
+	
+	fmt.Println("search value ",node1,"index:",ind,err)
 
 }
