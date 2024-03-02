@@ -107,23 +107,56 @@ func (l *LinkedList) DeleteNOde(val int) {
 
 func (l *LinkedList) Serachvalue(val int) (int, int, error) {
 
-	
+	if l.head.data == val {
 
-	if l.head.data == val{
-
-		return val,1,nil
+		return val, 1, nil
 	}
 
 	current := l.head
 
+	for current.next != nil {
 
-	for current.next != nil{
-
-		if current.data == val{
-			return current.data,l.length,nil
+		if current.data == val {
+			return current.data, l.length, nil
 		}
 		current = current.next
 	}
 
-	return 0,0,errors.New("there is no value in the node")
+	return 0, 0, errors.New("there is no value in the node")
+}
+
+// CALCULATE THE LENGTH OF THE LIST
+
+func (l *LinkedList) LengthOfList() {
+
+	current := l.head
+	index := 0
+
+	for current != nil {
+		index++
+		current = current.next
+	}
+
+	fmt.Println("the lenght of the linked List is :", index)
+}
+
+//A7 REVERSE THE LIST
+
+func (l *LinkedList) ReverserList() {
+
+	current := l.head
+
+	l.PrintReverse(current)
+
+}
+
+func (l *LinkedList) PrintReverse(n *Node) {
+
+	if n == nil {
+		return
+	}
+
+	l.PrintReverse(n.next)
+	fmt.Println(n.data)
+
 }
