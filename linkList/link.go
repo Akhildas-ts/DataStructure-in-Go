@@ -6,57 +6,57 @@ import (
 )
 
 type Node struct {
-	data int
-	next *Node
+	Data int
+	Next *Node
 }
 
 type LinkedList struct {
-	head   *Node
-	length int
+	Head   *Node
+	Length int
 }
 
 //TRAVERSE LINKED LIST AND PRINT ELEMENT
 
 func (l LinkedList) TraverseAllNode() {
-	current := l.head
+	current := l.Head
 
 	for current != nil {
-		fmt.Printf("%d ", current.data)
-		current = current.next
+		fmt.Printf("%d ", current.Data)
+		current = current.Next
 	}
 }
 
 //INSERTION BEGGINING OF THE NODE
 
 func (l *LinkedList) InesrtBeggingOFNode(val int) {
-	node1 := &Node{data: val}
+	node1 := &Node{Data: val}
 
-	second := l.head
-	node1.next = second
-	l.head = node1
+	second := l.Head
+	node1.Next = second
+	l.Head = node1
 
 }
 
 //INSERTING AT THE END OF THE NODE
 
 func (l *LinkedList) InsertAtEndOfNOde(val int) {
-	node1 := &Node{data: val}
+	node1 := &Node{Data: val}
 
-	if l.head == nil {
-		l.head = node1
-		l.length = 1
+	if l.Head == nil {
+		l.Head = node1
+		l.Length = 1
 		return
 	}
 
-	current := l.head
+	current := l.Head
 
-	for current.next != nil {
+	for current.Next != nil {
 
-		current = current.next
+		current = current.Next
 	}
 
-	current.next = node1
-	l.length++
+	current.Next = node1
+	l.Length++
 
 }
 
@@ -64,23 +64,23 @@ func (l *LinkedList) InsertAtEndOfNOde(val int) {
 
 func (l *LinkedList) AddMiddleOfNode(val int) {
 
-	node1 := &Node{data: val}
+	node1 := &Node{Data: val}
 
-	if l.head == nil {
-		l.head = node1
+	if l.Head == nil {
+		l.Head = node1
 		return
 	}
-	current := l.head
+	current := l.Head
 
-	pos := l.length / 2
+	pos := l.Length / 2
 
 	for i := 1; i < pos; i++ {
 
-		current = current.next
+		current = current.Next
 
 	}
-	node1.next = current.next
-	current.next = node1
+	node1.Next = current.Next
+	current.Next = node1
 	current = node1
 }
 
@@ -88,18 +88,18 @@ func (l *LinkedList) AddMiddleOfNode(val int) {
 
 func (l *LinkedList) DeleteNOde(val int) {
 
-	if l.head.data == val {
-		l.head = l.head.next
+	if l.Head.Data == val {
+		l.Head = l.Head.Next
 		return
 	}
 
-	current := l.head
+	current := l.Head
 
-	for current.next.data != val {
-		current = current.next
+	for current.Next.Data != val {
+		current = current.Next
 	}
 
-	current.next = current.next.next
+	current.Next = current.Next.Next
 
 }
 
@@ -107,19 +107,19 @@ func (l *LinkedList) DeleteNOde(val int) {
 
 func (l *LinkedList) Serachvalue(val int) (int, int, error) {
 
-	if l.head.data == val {
+	if l.Head.Data == val {
 
 		return val, 1, nil
 	}
 
-	current := l.head
+	current := l.Head.Next
 
-	for current.next != nil {
+	for current.Next != nil {
 
-		if current.data == val {
-			return current.data, l.length, nil
+		if current.Data == val {
+			return current.Data, l.Length, nil
 		}
-		current = current.next
+		current = current.Next
 	}
 
 	return 0, 0, errors.New("there is no value in the node")
@@ -129,12 +129,12 @@ func (l *LinkedList) Serachvalue(val int) (int, int, error) {
 
 func (l *LinkedList) LengthOfList() {
 
-	current := l.head
+	current := l.Head
 	index := 0
 
 	for current != nil {
 		index++
-		current = current.next
+		current = current.Next
 	}
 
 	fmt.Println("the lenght of the linked List is :", index)
@@ -142,9 +142,12 @@ func (l *LinkedList) LengthOfList() {
 
 //A7 REVERSE THE LIST
 
+//rerver printing the node with recursion 
+
+
 func (l *LinkedList) ReverserList() {
 
-	current := l.head
+	current := l.Head
 
 	l.PrintReverse(current)
 
@@ -156,7 +159,7 @@ func (l *LinkedList) PrintReverse(n *Node) {
 		return
 	}
 
-	l.PrintReverse(n.next)
-	fmt.Println(n.data)
+	l.PrintReverse(n.Next)
+	fmt.Println(n.Data)
 
 }

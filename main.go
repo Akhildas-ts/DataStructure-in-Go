@@ -38,10 +38,21 @@ func main() {
 
 	//A7 REVERSER THE LIST
 
-	//REVERSE THE LIST OF NODE 
+	//REVERSE THE LIST OF NODE
 
 	// l1.TraverseAllNode()
 	// println()
 
 	// l1.ReverserList()
+
+	//A8 MERGE TWO SORT ARRAY
+
+	list1 := &Linklist.Node{Data:10 ,Next: &Linklist.Node{Data: 20,Next:&Linklist.Node{Data: 40} } }
+	list2 := &Linklist.Node{Data: 12,Next: &Linklist.Node{Data: 25,Next: &Linklist.Node{Data: 30}}}
+
+	store := l1.MergeTwoSortArray(list1,list2)
+	l1.NodePrint(store)
+	println()
+	
+
 }
