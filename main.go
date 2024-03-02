@@ -47,12 +47,17 @@ func main() {
 
 	//A8 MERGE TWO SORT ARRAY
 
-	list1 := &Linklist.Node{Data:10 ,Next: &Linklist.Node{Data: 20,Next:&Linklist.Node{Data: 40} } }
-	list2 := &Linklist.Node{Data: 12,Next: &Linklist.Node{Data: 25,Next: &Linklist.Node{Data: 30}}}
+	// list1 := &Linklist.Node{Data:10 ,Next: &Linklist.Node{Data: 20,Next:&Linklist.Node{Data: 40} } }
+	// list2 := &Linklist.Node{Data: 12,Next: &Linklist.Node{Data: 25,Next: &Linklist.Node{Data: 30}}}
 
-	store := l1.MergeTwoSortArray(list1,list2)
-	l1.NodePrint(store)
-	println()
+	// store := l1.MergeTwoSortArray(list1,list2)
+	// println()
 	
+	// l1.NodePrint(store)
+
+	//A9 Binary serach 
+    arr := []int{1,2,3,3,4,5}
+	x :=3	
+	Linklist.BinarySerach(arr,x)
 
 }

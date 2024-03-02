@@ -3,52 +3,53 @@ package Linklist
 import (
 	"fmt"
 )
-
-
-//MERGE SORTED TWO ARRAY
-
 func (l *LinkedList) MergeTwoSortArray(list1 *Node, list2 *Node) *Node {
+    var mergedHead, tail *Node
     l1 := list1
     l2 := list2
 
-    var mergedList, tail *Node
     for l1 != nil && l2 != nil {
-        var smaller *Node
+        var smallerNode *Node
         if l1.Data <= l2.Data {
-            smaller = l1
+            smallerNode = l1
             l1 = l1.Next
         } else {
-            smaller = l2
+            smallerNode = l2
             l2 = l2.Next
         }
-        if mergedList == nil {
-            mergedList = smaller
-            tail = smaller
+
+        // If mergedHead is nil, assign the smaller node as the head
+        if mergedHead == nil {
+            mergedHead = smallerNode
+            tail = smallerNode
         } else {
-            tail.Next = smaller
-            tail = tail.Next
+            // Append the smaller node to the merged list
+            tail.Next = smallerNode
+            // Update the tail to the newly added node
+            tail = smallerNode
         }
     }
 
-    // Append remaining elements of either list
+    // Append the remaining nodes of list1 or list2
     if l1 != nil {
-        if mergedList == nil {
-            mergedList = l1
+        if mergedHead == nil {
+            mergedHead = l1
         } else {
             tail.Next = l1
         }
     }
 
     if l2 != nil {
-        if mergedList == nil {
-            mergedList = l2
+        if mergedHead == nil {
+            mergedHead = l2
         } else {
             tail.Next = l2
         }
     }
 
-    return mergedList
+    return mergedHead
 }
+
 
 func (l *LinkedList) NodePrint(n *Node) {
 
@@ -59,7 +60,7 @@ func (l *LinkedList) NodePrint(n *Node) {
 	}
 
 	for current != nil {
-		fmt.Print(current.Data, " ")
+		fmt.Print(current.Data," ")
 		current = current.Next
 	}
 }
