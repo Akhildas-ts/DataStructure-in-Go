@@ -36,3 +36,31 @@ func BinarySerach(arr []int, x int) {
 	}
 
 }
+
+// GET THE LAST ELEMENT OF THE TARGET 
+
+func BinarySerachOfLastElement(arr[]int,x int)int{
+
+	left := 0
+	right := len(arr)-1
+	result := 0
+
+	for left <= right{
+		
+		mid := left + (right - left)/2
+
+		if arr[mid]==x{
+			result = mid
+			left = mid + 1
+		}
+
+		if arr[mid] <x{
+			left =mid+1
+		}else if arr[mid] > x{
+			right = mid-1
+		}
+	}
+
+	fmt.Println("these index ",result,"of ",x)
+	return result
+}

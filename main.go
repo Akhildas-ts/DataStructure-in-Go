@@ -56,8 +56,9 @@ func main() {
 	// l1.NodePrint(store)
 
 	//A9 Binary serach 
-    arr := []int{1,2,3,3,4,5}
+    arr := []int{1,2,3,3,3,5}
 	x :=3	
-	Linklist.BinarySerach(arr,x)
+	// Linklist.BinarySerach(arr,x)
+	Linklist.BinarySerachOfLastElement(arr,x)
 
 }
