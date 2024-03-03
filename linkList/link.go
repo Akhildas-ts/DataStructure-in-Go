@@ -142,8 +142,7 @@ func (l *LinkedList) LengthOfList() {
 
 //A7 REVERSE THE LIST
 
-//rerver printing the node with recursion 
-
+//rerver printing the node with recursion
 
 func (l *LinkedList) ReverserList() {
 
@@ -162,4 +161,81 @@ func (l *LinkedList) PrintReverse(n *Node) {
 	l.PrintReverse(n.Next)
 	fmt.Println(n.Data)
 
+}
+
+func (l *LinkedList) MergeTwoSortArray(list1 *Node, list2 *Node) *Node {
+
+	l1 := list1
+	l2 := list2
+	var mergedNode *Node
+	var prev *Node
+
+	for l1 != nil && l2 != nil {
+
+		var store *Node
+
+		if l1.Data < l2.Data {
+			store = l1
+			l1 = l1.Next
+		} else if l2.Data < l1.Data {
+			store = l2
+			l2 = l2.Next
+		}
+
+		if mergedNode == nil {
+			mergedNode = store
+			prev = mergedNode
+		} else {
+			prev.Next = store
+			prev = store
+		}
+
+	}
+
+	if l1 != nil {
+		prev.Next = l1
+
+	} else if l2 != nil {
+		prev.Next = l2
+	}
+	return mergedNode
+
+}
+
+
+
+
+func (l *LinkedList) RemoveLastNelement(head *Node, n int) *Node {
+    if head == nil || n <= 0 {
+        return head
+    }
+
+    // Calculate the length of the linked list
+    length := 0
+    current := head
+    for current != nil {
+        length++
+        current = current.Next
+    }
+
+    // Reset current to the head of the list
+    current = head
+
+    // If n is equal to the length of the list, remove the first node
+    if n == length {
+        head = head.Next
+        return head
+    }
+
+    // Traverse the list again to find the node before the nth node from the end
+    for i := 1; i < length-n; i++ {
+        current = current.Next
+    }
+
+    // Remove the nth node from the end
+    if current.Next != nil {
+        current.Next = current.Next.Next
+    }
+
+    return head
 }

@@ -62,9 +62,7 @@ func BinarySerachOfLastElement(arr []int, x int) int {
 	return result
 }
 
-
-//TOTAL INDEX NUMBER   
-
+//TOTAL INDEX NUMBER
 
 func BinarySerachOf(arr []int, x int) []int {
 
@@ -72,6 +70,7 @@ func BinarySerachOf(arr []int, x int) []int {
 	right := len(arr) - 1
 
 	var result []int
+	var nresult int
 
 	for left <= right {
 
@@ -83,15 +82,22 @@ func BinarySerachOf(arr []int, x int) []int {
 			lmid := mid - 1
 
 			for lmid >= 0 && arr[lmid] == x {
-				result = append(result, lmid)
+				// result = append(result, lmid)
 				lmid--
+			}
+			if lmid+1 > 0 {
+				result = append(result, lmid+1)
 			}
 
 			rmid := mid + 1
 
 			for rmid < len(arr)-1 && arr[rmid] == x {
-				result = append(result, rmid)
+				
 				rmid++
+			}
+
+			if rmid-1 <= len(arr)-1{
+				result = append(result, rmid-1)
 			}
 
 			break
@@ -104,6 +110,8 @@ func BinarySerachOf(arr []int, x int) []int {
 			right = mid - 1
 		}
 	}
+
+	fmt.Println("frist result is ", result, "last is :", nresult)
 	return result
 
 }

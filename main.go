@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	Linklist "linked/linkList"
 )
 
@@ -16,9 +15,9 @@ func main() {
 	// l1.InesrtBeggingOFNode(30)
 
 	//A2.INSERT END OF THE NODE
-	l1.InsertAtEndOfNOde(10)
-	l1.InsertAtEndOfNOde(20)
-	l1.InsertAtEndOfNOde(30)
+	// l1.InsertAtEndOfNOde(10)
+	// l1.InsertAtEndOfNOde(20)
+	// l1.InsertAtEndOfNOde(30)
 
 	//A3.
 	// l1.AddMiddleOfNode(7)
@@ -48,22 +47,27 @@ func main() {
 
 	//A8 MERGE TWO SORT ARRAY
 
-	// list1 := &Linklist.Node{Data:10 ,Next: &Linklist.Node{Data: 20,Next:&Linklist.Node{Data: 40} } }
-	// list2 := &Linklist.Node{Data: 12,Next: &Linklist.Node{Data: 25,Next: &Linklist.Node{Data: 30}}}
+	
+	// list2 := &Linklist.Node{Data: 12, Next: &Linklist.Node{Data: 25, Next: &Linklist.Node{Data: 30}}}
 
-	// store := l1.MergeTwoSortArray(list1,list2)
+	// store := l1.MergeTwoSortArray(list1, list2)
 	// println()
 
 	// l1.NodePrint(store)
 
 	//A9 Binary serach
-	arr := []int{1, 3, 3, 3, 3, 5}
-	x :=3
+	// arr := []int{1, 3, 3, 3, 3, 5}
+	// x :=3
 	// Linklist.BinarySerach(arr,x)
 	//  Linklist.BinarySerachOfLastElement(arr,x)
 
-	store := Linklist.BinarySerachOf(arr, x)
+	// store := Linklist.BinarySerachOf(arr, x)
 
-	fmt.Println("these is slice of store ", store)
+	// fmt.Println("these is slice of store ", store)
 
+	//A10 REMVOVE THE NTH ELEMENT
+	list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
+	store := l1.RemoveLastNelement(list1,1)
+	println()
+	l1.NodePrint(store)
 }
