@@ -203,6 +203,10 @@ func (l *LinkedList) MergeTwoSortArray(list1 *Node, list2 *Node) *Node {
 }
 
 
+//REMOVE THE LAST N TH ELEMENT OF THE LINKED LIST 
+// FRIST OF ALL WE ARE FINDING THE LENGHT 
+// THEN WE ARE GOING TO THE N (target)
+//THEN  IF THE TARGET REACH SO THAT TIME WE NEED DELTE THAT NODE 
 
 
 func (l *LinkedList) RemoveLastNelement(head *Node, n int) *Node {
