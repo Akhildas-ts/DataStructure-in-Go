@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	Linklist "linked/linkList"
 )
 
@@ -52,13 +53,17 @@ func main() {
 
 	// store := l1.MergeTwoSortArray(list1,list2)
 	// println()
-	
+
 	// l1.NodePrint(store)
 
-	//A9 Binary serach 
-    arr := []int{1,2,3,3,3,5}
-	x :=3	
+	//A9 Binary serach
+	arr := []int{1, 3, 3, 3, 3, 5}
+	x :=3
 	// Linklist.BinarySerach(arr,x)
-	Linklist.BinarySerachOfLastElement(arr,x)
+	//  Linklist.BinarySerachOfLastElement(arr,x)
+
+	store := Linklist.BinarySerachOf(arr, x)
+
+	fmt.Println("these is slice of store ", store)
 
 }
