@@ -66,8 +66,22 @@ func main() {
 	// fmt.Println("these is slice of store ", store)
 
 	//A10 REMVOVE THE NTH ELEMENT
-	list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
-	store := l1.RemoveLastNelement(list1,1)
-	println()
-	l1.NodePrint(store)
+	// list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
+// 	list2 := &Linklist.Node{Data: 10}
+// 	// store := l1.RemoveLastNelement(list1,1)
+//   l1.Head = list2
+
+	
+// 	// println()
+// 	swao:= l1.SwapPairs(list2)
+
+	
+// 	l1.NodePrint(swao)
+
+list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
+
+//   l1.RemvoeDuplicate(list1)
+store := l1.SortList(list1)
+l1.NodePrint(store)
+
 }

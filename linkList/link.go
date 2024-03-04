@@ -202,44 +202,145 @@ func (l *LinkedList) MergeTwoSortArray(list1 *Node, list2 *Node) *Node {
 
 }
 
-
-//REMOVE THE LAST N TH ELEMENT OF THE LINKED LIST 
-// FRIST OF ALL WE ARE FINDING THE LENGHT 
+//REMOVE THE LAST N TH ELEMENT OF THE LINKED LIST
+// FRIST OF ALL WE ARE FINDING THE LENGHT
 // THEN WE ARE GOING TO THE N (target)
-//THEN  IF THE TARGET REACH SO THAT TIME WE NEED DELTE THAT NODE 
-
+//THEN  IF THE TARGET REACH SO THAT TIME WE NEED DELTE THAT NODE
 
 func (l *LinkedList) RemoveLastNelement(head *Node, n int) *Node {
-    if head == nil || n <= 0 {
-        return head
-    }
+	if head == nil || n <= 0 {
+		return head
+	}
 
-    // Calculate the length of the linked list
-    length := 0
-    current := head
-    for current != nil {
-        length++
-        current = current.Next
-    }
+	// Calculate the length of the linked list
+	length := 0
+	current := head
+	for current != nil {
+		length++
+		current = current.Next
+	}
 
-    // Reset current to the head of the list
-    current = head
+	// Reset current to the head of the list
+	current = head
 
-    // If n is equal to the length of the list, remove the first node
-    if n == length {
-        head = head.Next
-        return head
-    }
+	// If n is equal to the length of the list, remove the first node
+	if n == length {
+		head = head.Next
+		return head
+	}
 
-    // Traverse the list again to find the node before the nth node from the end
-    for i := 1; i < length-n; i++ {
-        current = current.Next
-    }
+	// Traverse the list again to find the node before the nth node from the end
+	for i := 1; i < length-n; i++ {
+		current = current.Next
+	}
 
-    // Remove the nth node from the end
-    if current.Next != nil {
-        current.Next = current.Next.Next
-    }
+	// Remove the nth node from the end
+	if current.Next != nil {
+		current.Next = current.Next.Next
+	}
 
-    return head
+	return head
+}
+
+//SWAP THE NODE'S
+
+func (l *LinkedList) SwapPairs(head *Node) *Node {
+	l.Head = head
+
+	if head == nil {
+		fmt.Println("there is no nodes")
+		return nil
+	}
+
+	current := head
+
+	var prev *Node
+	var newHead *Node
+
+	for current != nil && current.Next != nil {
+
+		firstNode := current
+		secondNode := current.Next
+
+		// Adjust the pointers to swap the nodes
+		firstNode.Next = secondNode.Next
+		secondNode.Next = firstNode
+
+		// Update the head of the list if the swap occurs at the beginning
+		if current == head {
+			head = secondNode
+		}
+
+		if prev != nil {
+			prev.Next = secondNode
+		} else {
+			newHead = secondNode
+		}
+		// Move to the next pair of nodes
+		prev = firstNode
+		current = firstNode.Next
+	}
+
+	return newHead
+
+}
+
+// REMOVE DUPLICATE ELEMENTS
+
+func (l *LinkedList) RemvoeDuplicate(head *Node) {
+
+	store := make(map[int]bool)
+
+	c := head
+
+	if head == nil {
+		fmt.Println("there is no more node are there ")
+		return
+	}
+
+	store[c.Data] = true
+
+	for c.Next != nil {
+
+		if store[c.Next.Data] {
+			c.Next = c.Next.Next
+		} else {
+
+			store[c.Next.Data] = true
+			c = c.Next
+		}
+	}
+
+	c = head
+	l.NodePrint(c)
+
+}
+
+// SORT THE LINKED LIST
+func (l *LinkedList) SortList(head *Node) *Node {
+	if head == nil {
+		// Nothing to sort if the list is empty or has only one node
+		return nil
+	}
+
+	if head != nil && head == nil {
+		return head
+	}
+
+	// Iterate through the list using bubble sort algorithm
+	for current := head; current != nil; current = current.Next {
+		fmt.Println("printing the currentnode", current.Data)
+		for nextNode := current.Next; nextNode != nil; nextNode = nextNode.Next {
+			fmt.Println("prini the next node", nextNode.Data)
+			if current.Data > nextNode.Data {
+				// Swap the data of the current node and the next node
+				current.Data, nextNode.Data = nextNode.Data, current.Data
+			}
+		}
+	}
+
+	// Print the sorted list
+	l.NodePrint(head)
+	println()
+	return head
 }
