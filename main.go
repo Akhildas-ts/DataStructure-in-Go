@@ -92,8 +92,16 @@ func main() {
 
 	//B2 STRING LAST WORD LENGTH\
 
-	s := "hey we areb"
-	leng := String.LengthLastWord(s)
-	fmt.Println("the lenght ", leng)
+	// s := "hey we areb"
+	// leng := String.LengthLastWord(s)
+	// fmt.Println("the lenght ", leng)
+
+
+
+	// B3 CHECK 2 WORDS LETTERS 
+  s:= "akhil"
+  t := "akhis"
+	boo:= String.IsAnagram(s,t)
+	fmt.Println("the result ",boo)
 
 }
