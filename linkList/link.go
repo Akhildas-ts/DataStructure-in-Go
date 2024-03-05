@@ -247,6 +247,10 @@ func (l *LinkedList) RemoveLastNelement(head *Node, n int) *Node {
 func (l *LinkedList) SwapPairs(head *Node) *Node {
 	l.Head = head
 
+	if l.Head != nil && l.Head.Next == nil {
+		return head
+	}
+
 	if head == nil {
 		fmt.Println("there is no nodes")
 		return nil
@@ -256,6 +260,11 @@ func (l *LinkedList) SwapPairs(head *Node) *Node {
 
 	var prev *Node
 	var newHead *Node
+
+	if head != nil && head.Next != nil {
+		fmt.Println("hey ")
+		return head
+	}
 
 	for current != nil && current.Next != nil {
 
@@ -343,4 +352,47 @@ func (l *LinkedList) SortList(head *Node) *Node {
 	l.NodePrint(head)
 	println()
 	return head
+}
+
+func (l *LinkedList) ReverseBetween(no *Node, left int, right int) {
+
+	if no == nil {
+
+		return
+	}
+
+	var current *Node
+	var node *Node
+
+	current = no
+
+	for i := 1; i < left; i++ {
+		current = current.Next
+
+	}
+
+	//   ldata := current.Data
+
+	fmt.Println("the current next value is ", current.Data)
+
+	if current == nil || current.Next == nil {
+		return
+	}
+
+	node = no
+	fmt.Println("node value",node.Data)
+	for i := left; i < right; i++ {
+		node = node.Next
+		if node.Next == nil{
+		   break
+   
+		}
+		fmt.Println("node data's",node.Data)
+	}
+   
+	
+ 
+
+
+
 }

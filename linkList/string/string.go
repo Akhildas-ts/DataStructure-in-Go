@@ -70,3 +70,27 @@ func IsAnagram(s string, t string) bool {
 	return true
 
 }
+
+//
+
+func CanConstruct(ransome string, magazine string) bool {
+
+	store := make(map[rune]int)
+
+	for _, char := range magazine {
+
+		store[char]++
+
+	}
+
+	for _, Mag := range ransome {
+
+		store[Mag]--
+		if store[Mag] < 0 {
+
+			return false
+		}
+
+	}
+	return true
+}

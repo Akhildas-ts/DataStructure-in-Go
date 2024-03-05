@@ -1,13 +1,10 @@
 package main
 
-import (
-	"fmt"
-	String "linked/linkList/string"
-)
+import Linklist "linked/linkList"
 
 func main() {
 
-	// l1 := Linklist.LinkedList{}
+	l1 := Linklist.LinkedList{}
 
 	// A1.INSERT HEAD OF THE NODE
 
@@ -67,14 +64,14 @@ func main() {
 
 	//A10 REMVOVE THE NTH ELEMENT
 	// list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
-	// 	list2 := &Linklist.Node{Data: 10}
+	list2 := &Linklist.Node{Data: 10}
 	// 	// store := l1.RemoveLastNelement(list1,1)
 	//   l1.Head = list2
 
 	// 	// println()
-	// 	swao:= l1.SwapPairs(list2)
+	swao := l1.SwapPairs(list2)
 
-	// 	l1.NodePrint(swao)
+	l1.NodePrint(swao)
 
 	// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
 
@@ -96,12 +93,20 @@ func main() {
 	// leng := String.LengthLastWord(s)
 	// fmt.Println("the lenght ", leng)
 
+	// B3 CHECK 2 WORDS LETTERS
+	//   s:= "akhilg"
+	//   t := "akhilgbb"
+	// boo:= String.IsAnagram(s,t)
+	// fmt.Println("the result ",boo)
 
+	//B4 CHECK 1 EELEMENTS INTO THE SECOND ELEMETNTS
 
-	// B3 CHECK 2 WORDS LETTERS 
-  s:= "akhil"
-  t := "akhis"
-	boo:= String.IsAnagram(s,t)
-	fmt.Println("the result ",boo)
+	// boom := String.CanConstruct(s,t)
+	// fmt.Println("the result ",boom)
+
+	//B5 reverseBetween 
+// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
+
+// 	l1.ReverseBetween(list1,2,4)
 
 }
