@@ -1,12 +1,10 @@
 package main
 
-import (
-	Linklist "linked/linkList"
-)
+import String "linked/linkList/string"
 
 func main() {
 
-	l1 := Linklist.LinkedList{}
+	// l1 := Linklist.LinkedList{}
 
 	// A1.INSERT HEAD OF THE NODE
 
@@ -47,7 +45,6 @@ func main() {
 
 	//A8 MERGE TWO SORT ARRAY
 
-	
 	// list2 := &Linklist.Node{Data: 12, Next: &Linklist.Node{Data: 25, Next: &Linklist.Node{Data: 30}}}
 
 	// store := l1.MergeTwoSortArray(list1, list2)
@@ -67,21 +64,32 @@ func main() {
 
 	//A10 REMVOVE THE NTH ELEMENT
 	// list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
-// 	list2 := &Linklist.Node{Data: 10}
-// 	// store := l1.RemoveLastNelement(list1,1)
-//   l1.Head = list2
+	// 	list2 := &Linklist.Node{Data: 10}
+	// 	// store := l1.RemoveLastNelement(list1,1)
+	//   l1.Head = list2
 
-	
-// 	// println()
-// 	swao:= l1.SwapPairs(list2)
+	// 	// println()
+	// 	swao:= l1.SwapPairs(list2)
 
-	
-// 	l1.NodePrint(swao)
+	// 	l1.NodePrint(swao)
 
-list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
+	// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
 
-//   l1.RemvoeDuplicate(list1)
-store := l1.SortList(list1)
-l1.NodePrint(store)
+	//   l1.RemvoeDuplicate(list1)
+	// store := l1.SortList(list1)
+
+	// l1.NodePrint(store)
+
+	//B1 BINARY SEARCH
+
+	// arr := []int{4, 5, 6, 7, 0, 1, 2}
+	// target := 3
+	// store := Linklist.BinarySeracH(arr, target)
+	// fmt.Println("stored value", store)
+
+	//B2 STRING LAST WORD LENGTH\
+
+  s:= "hey we are"
+	String.LengthLastWord(s)
 
 }

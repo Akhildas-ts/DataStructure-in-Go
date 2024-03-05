@@ -92,11 +92,11 @@ func BinarySerachOf(arr []int, x int) []int {
 			rmid := mid + 1
 
 			for rmid < len(arr)-1 && arr[rmid] == x {
-				
+
 				rmid++
 			}
 
-			if rmid-1 <= len(arr)-1{
+			if rmid-1 <= len(arr)-1 {
 				result = append(result, rmid-1)
 			}
 
@@ -116,4 +116,65 @@ func BinarySerachOf(arr []int, x int) []int {
 
 }
 
-// func BinaryLengthOfTarget( arr[]int,target int)
+func BinarySeracH(arr []int, target int) int {
+
+	left := 0
+	right := len(arr) - 1
+
+	for left <= right {
+
+		mid := left + (right-left)/2
+		if arr[mid] == target {
+			return mid
+		}
+	
+		
+		if arr[mid] > arr[mid+1]{
+			
+			
+			
+			Dleft  := mid + 1
+			Dright := right
+			 
+			
+		for Dleft <= Dright{
+
+	
+			
+			if arr[Dleft] == target {
+				return Dleft
+			}
+
+
+		Dmid := Dleft + (Dright - Dleft)/2
+		if arr[Dmid] == target{
+			return Dmid
+		}
+     
+		if arr[Dmid] < target{
+			Dleft = Dmid +1
+		
+
+		} else {
+			Dright = Dmid -1
+			fmt.Println(Dright)
+		}
+
+	}
+	return -1
+	
+
+		} else {
+			if arr[mid] < target {
+
+			left = mid + 1
+		} else {
+
+			right = mid - 1
+
+		}
+
+	}
+}
+return -1
+}
