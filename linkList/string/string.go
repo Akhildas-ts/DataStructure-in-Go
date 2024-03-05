@@ -1,7 +1,6 @@
 package String
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -24,13 +23,12 @@ func StringCount(val string, n int) string {
 }
 
 func LengthLastWord(s string) int {
-    lastSpace := strings.LastIndex(s, " ")
-    if lastSpace == -1 {
-        return len(s)
-    }
+	trimmed := strings.TrimSpace(s)
 
-    
-    lastWord := s[lastSpace+1:]
-    return len(lastWord)
+	// Split the string by spaces
+	words := strings.Split(trimmed, " ")
+
+	// Get the last word and return its length
+	lastWord := words[len(words)-1]
+	return len(lastWord)
 }
-

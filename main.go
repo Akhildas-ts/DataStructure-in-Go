@@ -1,6 +1,9 @@
 package main
 
-import String "linked/linkList/string"
+import (
+	"fmt"
+	String "linked/linkList/string"
+)
 
 func main() {
 
@@ -89,7 +92,8 @@ func main() {
 
 	//B2 STRING LAST WORD LENGTH\
 
-  s:= "hey we are"
-	String.LengthLastWord(s)
+	s := "hey we areb"
+	leng := String.LengthLastWord(s)
+	fmt.Println("the lenght ", leng)
 
 }
