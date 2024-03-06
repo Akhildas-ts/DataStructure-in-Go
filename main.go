@@ -1,10 +1,13 @@
 package main
 
-import Linklist "linked/linkList"
+import (
+	"fmt"
+	"linked/linkList/recursion"
+)
 
 func main() {
 
-	l1 := Linklist.LinkedList{}
+	// l1 := Linklist.LinkedList{}
 
 	// A1.INSERT HEAD OF THE NODE
 
@@ -46,6 +49,7 @@ func main() {
 	//A8 MERGE TWO SORT ARRAY
 
 	// list2 := &Linklist.Node{Data: 12, Next: &Linklist.Node{Data: 25, Next: &Linklist.Node{Data: 30}}}
+	// list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
 
 	// store := l1.MergeTwoSortArray(list1, list2)
 	// println()
@@ -64,14 +68,14 @@ func main() {
 
 	//A10 REMVOVE THE NTH ELEMENT
 	// list1 := &Linklist.Node{Data: 10, Next: &Linklist.Node{Data: 20, Next: &Linklist.Node{Data: 40, Next: &Linklist.Node{Data: 60,Next: &Linklist.Node{Data: 70}}}}}
-	list2 := &Linklist.Node{Data: 10}
+	// list2 := &Linklist.Node{Data: 10}
 	// 	// store := l1.RemoveLastNelement(list1,1)
 	//   l1.Head = list2
 
 	// 	// println()
-	swao := l1.SwapPairs(list2)
+	// swao := l1.SwapPairs(list2)
 
-	l1.NodePrint(swao)
+	// l1.NodePrint(swao)
 
 	// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
 
@@ -104,9 +108,15 @@ func main() {
 	// boom := String.CanConstruct(s,t)
 	// fmt.Println("the result ",boom)
 
-	//B5 reverseBetween 
-// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
+	//B5 reverseBetween
+	// list1 := &Linklist.Node{Data: 1, Next: &Linklist.Node{Data: 5, Next: &Linklist.Node{Data: 4,Next: &Linklist.Node{Data: 6}}}}
 
-// 	l1.ReverseBetween(list1,2,4)
+	// 	l1.ReverseBetween(list1,2,4)
+
+	// i := recursion.Factorial(4)
+
+	// fmt.Println("the factorial is", i)
+
+	fmt.Println("sum of totol digits is ",recursion.SumOfDigits(12349) )
 
 }

@@ -163,42 +163,66 @@ func (l *LinkedList) PrintReverse(n *Node) {
 
 }
 
-func (l *LinkedList) MergeTwoSortArray(list1 *Node, list2 *Node) *Node {
+func (l *LinkedList) MergeTwoSortArray(l1 *Node, l2 *Node) *Node {
 
-	l1 := list1
-	l2 := list2
-	var mergedNode *Node
-	var prev *Node
+	dummy := &Node{} // Dummy node to simplify merging logic
+    current := dummy
 
-	for l1 != nil && l2 != nil {
+    for l1 != nil && l2 != nil {
+        if l1.Data < l2.Data {
+            current.Next= l1
+            l1 = l1.Next
+        } else {
+            current = l2
+            l2 = l2.Next
+        }
+        current = current.Next
+    }
 
-		var store *Node
+    // Append the remaining nodes from either list
+    if l1 != nil {
+        current.Next = l1
+    } else {
+        current.Next = l2
+    }
+	fmt.Println("the dummy node next is ",dummy.Next.Data)
 
-		if l1.Data < l2.Data {
-			store = l1
-			l1 = l1.Next
-		} else if l2.Data < l1.Data {
-			store = l2
-			l2 = l2.Next
-		}
+    return dummy // Return the next n
 
-		if mergedNode == nil {
-			mergedNode = store
-			prev = mergedNode
-		} else {
-			prev.Next = store
-			prev = store
-		}
+	// l1 := list1
+	// l2 := list2
+	// var mergedNode *Node
+	// var prev *Node
 
-	}
+	// for l1 != nil && l2 != nil {
 
-	if l1 != nil {
-		prev.Next = l1
+	// 	var store *Node
 
-	} else if l2 != nil {
-		prev.Next = l2
-	}
-	return mergedNode
+	// 	if l1.Data < l2.Data {
+	// 		store = l1
+	// 		l1 = l1.Next
+	// 	} else if l2.Data < l1.Data {
+	// 		store = l2
+	// 		l2 = l2.Next
+	// 	}
+
+	// 	if mergedNode == nil {
+	// 		mergedNode = store
+	// 		prev = mergedNode
+	// 	} else {
+	// 		prev.Next = store
+	// 		prev = store
+	// 	}
+
+	// }
+
+	// if l1 != nil {
+	// 	prev.Next = l1
+
+	// } else if l2 != nil {
+	// 	prev.Next = l2
+	// }
+	// return mergedNode
 
 }
 
@@ -380,19 +404,40 @@ func (l *LinkedList) ReverseBetween(no *Node, left int, right int) {
 	}
 
 	node = no
-	fmt.Println("node value",node.Data)
+	fmt.Println("node value", node.Data)
 	for i := left; i < right; i++ {
 		node = node.Next
-		if node.Next == nil{
-		   break
-   
+		if node.Next == nil {
+			break
+
 		}
-		fmt.Println("node data's",node.Data)
+		fmt.Println("node data's", node.Data)
 	}
-   
-	
- 
-
-
 
 }
+
+// func (l *LinkedList)MergetwoSortArray(list1 *Node, list2 *Node){
+
+// l1 := list1
+// l2 := list2
+
+// var mergedNode *Node
+//   var prev *Node
+//   var store *Node
+
+// for l1 != nil && l2 != nil{
+
+// 	if l1.Data < l2.Data{
+//        l1 = l1.Next
+// 	   store = l1
+
+// 	} else if l1.Data > l2.Data{
+// 		l2 = l2.Next
+// 		store = l2
+
+// 	}
+
+// 	prev = store
+
+// }
+// }
