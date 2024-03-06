@@ -115,8 +115,17 @@ func main() {
 
 	// i := recursion.Factorial(4)
 
-	// fmt.Println("the factorial is", i)
+	// B6 fmt.Println("the factorial is", i)
+
+	// B7. SUM OF THE DIGITS IN RECURION 
 
 	fmt.Println("sum of totol digits is ",recursion.SumOfDigits(12349) )
+   arr := []int{2,3,4,5,6,7,8,9}
+
+   // PRINT IN RECURSION 
+
+
+store:= recursion.BinaryWithRecurion(arr,0,7,9)
+fmt.Println("stored things ",store)
 
 }
